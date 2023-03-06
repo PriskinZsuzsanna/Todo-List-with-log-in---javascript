@@ -1,0 +1,206 @@
+:root {
+    --container-color: #ffffff1a;
+    --shadow: #00000080;
+    --light-h1: #3e9111;
+    --dark-h1: #000000cc;
+    --light-thin-text: #2c660d;
+    --dark-thin-text: #000000cc;
+    --dark-hover-focus: #00000080;
+    --light-hover-focus: #0000002f;
+    --light-yellow: #d1e429;
+    --dark-yellow: #d1930c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(hatter-light.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: monospace;
+    transition: all .5s ease-in-out;
+}
+body.dark {
+    background-image: url(hatter.jpg);
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--container-color);
+    backdrop-filter: blur(15px); 
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    scale: 1;
+    rotate: 0;
+    transition: all 1s ease-in-out;
+}
+
+.container.scale-away {
+    scale: 0;
+    rotate: 360deg;
+}
+
+.container form {
+    margin-block: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form h2 {
+    margin-block:0 5px;
+    color: var(--light-h1);
+    transition: all .5s ease-in-out;
+}
+form.dark h2{
+    color: var(--dark-h1);
+}
+
+form h1 {
+    margin-block: 0 35px;
+    color: var(--light-h1);
+    transition: all .5s ease-in-out;
+}
+form.dark h1 {
+    color: var(--dark-h1);
+}
+
+form label {
+    margin-block: 5px;
+    font-size: 16px;
+    color: var(--light-thin-text);
+    transition: all .5s ease-in-out;
+}
+form.dark label {
+    color: var(--dark-thin-text);
+}
+
+form input {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    box-shadow: 1px 2px 6px var(--shadow);
+    transition: all .5s ease-in-out;
+}
+
+form input:hover,
+form input:focus {
+    background-color: var(--light-hover-focus);
+    color: #fff;
+}
+form.dark input:hover,
+form.dark input:focus {
+    background-color: var(--dark-hover-focus);
+}
+
+input.error {
+    border: 2px solid red;
+    transition: border .3s linear;
+}
+
+input.success {
+    border: 2px solid green;
+    transition: border .3s linear;
+}
+
+
+
+form button {
+    padding: 10px 36px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background: none;
+    color: var(--light-thin-text);
+    box-shadow: 1px 2px 6px var(--shadow);
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+form.dark button{
+    color: var(--dark-thin-text);
+}
+
+form button:hover {
+    background-color: var(--light-hover-focus);
+    color: #fff;
+}
+form.dark button:hover {
+    background-color: var(--dark-hover-focus);
+}
+
+.button {
+    position: relative;
+    background-color: var(--light-hover-focus);
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 8px;
+    transition: all .5s ease-in-out;
+}
+.button.dark {
+    background-color: var(--dark-hover-focus);
+}
+
+.button i {
+    color: var(--light-yellow);
+}
+
+.button.dark i{
+    color: var(--dark-yellow);
+}
+
+.ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    scale: .8;
+    z-index: 10;
+    background-color: #fff;
+    transition: all .5s ease-in-out;
+}
+.ball.dark {
+    background-color: #000000;
+    translate: 30px;
+}
+
+@media screen and (max-width: 600px){
+    .container {
+        width: 90%;
+        padding-inline: 10px;
+    }
+
+    .container h1 {
+        font-size: 1.5rem;
+    }
+
+    form input {
+        width: 95%;
+    }
+}
+
+
